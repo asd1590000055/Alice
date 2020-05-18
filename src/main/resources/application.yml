@@ -1,0 +1,32 @@
+server:
+  port: 8989
+  servlet:
+    context-path: /blog
+    jsp:
+      init-parameters:
+        development: true
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/springboot
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  aop:
+    proxy-target-class: true
+  redis:
+    host: 192.168.101.15
+    port: 6379
+mybatis:
+  type-aliases-package: com.zt.entity
+  mapper-locations: classpath:com/zt/mapper/*.xml
+logging:
+  level:
+    root: info
+    com.zt.dao: debug
+    com.zt.service: debug
+    com.zt.controller: debug
